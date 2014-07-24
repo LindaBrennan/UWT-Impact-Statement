@@ -43,6 +43,7 @@ The location of said library in the BBIS Documents part must be provided as an a
 *    Make note of the URL
 *    Provide the URL to the script as an argument at runtime
 
+
 	jQuery('document').ready( function(){
 		filelocation = {
 			bbisDocumentURL : 'impactStatementLibrary.txt'
