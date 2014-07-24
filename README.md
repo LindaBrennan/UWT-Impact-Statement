@@ -56,11 +56,13 @@ To install the customization into a BBIS page a user must add one (1) Unformatte
 
 *    Create one (1) new Unformatted Text and Image Part
 *    Add the following to said part
-     <!—The Impact Statement JavaScript -->
-     <script type="text/javascript" src=“impactStatement.js"></script>
-     <!-- html element to be placed onto the page with a donation form -->
-     <div id=“impactStatement"></div>
-     
+
+####Example     
+	<!—The Impact Statement JavaScript -->
+		<script type="text/javascript" src=“impactStatement.js"></script>
+	<!-- html element to be placed onto the page with a donation form -->
+		<div id=“impactStatement"></div>
+	
 	<script>
 		jQuery('document').ready( function(){
 			// expected arguments are Federal Tax Rate + Provincial Tax Rate
