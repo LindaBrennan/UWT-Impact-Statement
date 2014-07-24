@@ -43,11 +43,11 @@ The location of said library in the BBIS Documents part must be provided as an a
 *    Make note of the URL
 *    Provide the URL to the script as an argument at runtime
 
-     jQuery('document').ready( function(){
-          filelocation = {
-               bbisDocumentURL : 'impactStatementLibrary.txt'
-          });
-     });
+	jQuery('document').ready( function(){
+		filelocation = {
+			bbisDocumentURL : 'impactStatementLibrary.txt'
+		});
+	});
 
 
 ### Page Configuration
@@ -59,15 +59,18 @@ To install the customization into a BBIS page a user must add one (1) Unformatte
      <script type="text/javascript" src=“impactStatement.js"></script>
      <!-- html element to be placed onto the page with a donation form -->
      <div id=“impactStatement"></div>
-     <script>
-     jQuery('document').ready( function(){
-     // expected arguments are Federal Tax Rate + Provincial Tax Rate
-          impactStatement(
-          filelocation = {
-               bbisDocumentURL : 'impactStatementLibrary.txt'
-          });
-     });
-     </script>
+     
+	<script>
+		jQuery('document').ready( function(){
+			// expected arguments are Federal Tax Rate + Provincial Tax Rate
+			impactStatement(
+				filelocation = {
+					bbisDocumentURL : 'impactStatementLibrary.txt'
+				}
+			);
+		});
+	</script>
+
 *    Add the part to a BBIS page in conjunction with a BBIS Donation Form
 
 ##Assumptions
