@@ -1,8 +1,6 @@
 # Impact Statement
 The Impact Statement customization is a custom javascript plugin that runs with a default BBIS donation form.
 
-![Impact Statement image](https://raw.githubusercontent.com/LindaBrennan/UWT-Impact-Statement/master/impactStatment.png “Impact Statement")
-
 ##About the Customization
 
 The Impact Statement customization will be driven from a management parameter that contains a range of values and Statements. When a donor indicates they will be giving a particular dollar amount the Impact Statement display text will dynamically update. The custom JavaScript will preform a “look up”. Once the appropriate range is located, the corresponding text string will be reflected in the Impact Statement customization.
