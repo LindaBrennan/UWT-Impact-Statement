@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="../js/vendor/jquery.js"></script>
+	<!--The tax tip calculator js, add this script as a method in site global -->
+	<script type="text/javascript" src="../js/impactStatment.js"></script>
+</head>
+<body>
+	<!-- Run the tax tip calculator at startup, place the following in a UT&I Part -->
+	
+	<h1>Impact Statement - Example to run as localhost</h1>
+	<h2>
+		The Impact Statement customization is a custom javascript plugin that runs with a default BBIS donation form. 
+	</h2>
+	<p>
+	The Impact Statement customization will be driven from a management parameter that contains a range of values and statements. When a donor indicates they will be giving a particular dollar amount the Impact Statement display text will dynamically update. The custom JavaScript will preform a “look up”. Once the appropriate range is located, the corresponding text string will be reflected in the Impact Statement customization.
+	</p>
+	<!-- Default BBIS donation form inputs -->
+	<fieldset>
+	<p>Default BBIS Donation input</p>
+	<label>Default donation $ Amount</label>
+	<input name="PC1222$txtAmount" type="text" maxlength="10" id="PC1222_txtAmount" class="BBFormTextbox DonationTextboxNarrow">
+	</fieldset>
+	<br>
+	<fieldset>
+	<!-- html element to be placed onto the page with a donation form -->
+	 <div id="impactStatment"></div>
+	</fieldset> 
+	 <script>
+		jQuery('document').ready( function(){
+			// expected arguments are language and filelocation
+			impactStatment.init(language = {
+				heading : 'Your Impact', 
+				currencySymbol : '$' 
+			},
+			filelocation = {
+				bbisDocumentURL : '../js/impactStatmentLibrary.txt'
+			}
+		    );
+		});
+	</script>
+</body>
+</html>

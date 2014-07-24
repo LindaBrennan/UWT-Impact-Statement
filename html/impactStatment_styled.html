@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- The following styles will need to be inserted into BBIS style sheet -->
+	<style>
+		#impactStatment{
+			background: #4375ca; /* Old browsers */
+			/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNDM3NWNhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzJkNGY4YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+			background: -moz-linear-gradient(-45deg,  #4375ca 0%, #2d4f8c 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#4375ca), color-stop(100%,#2d4f8c)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(-45deg,  #4375ca 0%,#2d4f8c 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(-45deg,  #4375ca 0%,#2d4f8c 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(-45deg,  #4375ca 0%,#2d4f8c 100%); /* IE10+ */
+			background: linear-gradient(135deg,  #4375ca 0%,#2d4f8c 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4375ca', endColorstr='#2d4f8c',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */	
+			/* borders */
+			border: 1px solid #605f64;
+			-webkit-border-bottom-right-radius: 13px;
+			-moz-border-radius-bottomright: 13px;
+			border-bottom-right-radius: 13px;
+			/* Structure */
+			height: 245px;
+			padding:23px;
+			width: 286px;
+			
+			/* Do not import to BBIS */
+			font-family: "Avenir LT W01 55 Roman",Arial,"Helvetica Neue",Helvetica,sans-serif;
+		}
+		#impactStatment .impactAmountContainer{
+			color: #47b1e3; 
+			font-size: 3.5rem;
+			font-weight: bold;
+			word-wrap: break-word;
+		}
+		#impactStatment .impactHeading, #impactStatment .impactMessage{
+			color: #f8ffff;
+			padding-top:15px;
+		}
+		#impactStatment .impactHeading{
+			font-size: 2rem;
+		}
+	</style>
+	
+	<script type="text/javascript" src="../js/vendor/jquery.js"></script>
+	<!--The tax tip calculator js, add this script as a method in site global -->
+	<script type="text/javascript" src="../js/impactStatment.js"></script>
+</head>
+<body>
+	<!-- Run the tax tip calculator at startup, place the following in a UT&I Part -->
+	
+	<h1>Impact Statement - Example to run as localhost</h1>
+	<h2>
+		The Impact Statement customization is a custom javascript plugin that runs with a default BBIS donation form. 
+	</h2>
+	<p>
+	The Impact Statement customization will be driven from a management parameter that contains a range of values and statements. When a donor indicates they will be giving a particular dollar amount the Impact Statement display text will dynamically update. The custom JavaScript will preform a “look up”. Once the appropriate range is located, the corresponding text string will be reflected in the Impact Statement customization.
+	</p>
+	<!-- Default BBIS donation form inputs -->
+	<fieldset>
+	<p>Default BBIS Donation input</p>
+	<label>Default donation $ Amount</label>
+	<input name="PC1222$txtAmount" type="text" maxlength="10" id="PC1222_txtAmount" class="BBFormTextbox DonationTextboxNarrow">
+	</fieldset>
+	<br>
+	<fieldset>
+	<!-- html element to be placed onto the page with a donation form -->
+	 <div id="impactStatment"></div>
+	</fieldset> 
+	 <script>
+		jQuery('document').ready( function(){
+			// expected arguments are language and filelocation
+			impactStatment.init(language = {
+				heading : 'Your Impact', 
+				currencySymbol : '$' 
+			},
+			filelocation = {
+				bbisDocumentURL : '../js/impactStatmentLibrary.txt'
+			}
+		    );
+		});
+	</script>
+</body>
+</html>
