@@ -75,3 +75,4 @@ To install the customization into a BBIS page a user must add one (1) Unformatte
 ##Assumptions
 *    United Way Toronto will be responsible for providing and managing impact Statements and corresponding range values
 *    Text associated with each impact Statement should be free text - avoid embedding text into images
+*
