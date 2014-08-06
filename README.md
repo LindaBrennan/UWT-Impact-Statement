@@ -52,7 +52,7 @@ The location of said library in the BBIS Documents part must be provided as an a
 
 
 ### Page Configuration
-To install the customization into a BBIS page a user must add one (1) Unformatted Text and Images Part to a BBIS page. The Page must also contain one (1) BBIS Donation Form.
+To install the customization into a BBIS page a user must add one (1) Unformatted Text Part to a BBIS page. The Page must also contain one (1) BBIS Donation Form.
 
 *    Create one (1) new Unformatted Text and Image Part
 *    Add the following to said part
@@ -65,7 +65,7 @@ To install the customization into a BBIS page a user must add one (1) Unformatte
 	
 	<script>
 		jQuery('document').ready( function(){
-			// expected arguments are Federal Tax Rate + Provincial Tax Rate
+			// expected argument is one file location of the the impactStatementLibrary text file.
 			impactStatement(
 				filelocation = {
 					bbisDocumentURL : 'impactStatementLibrary.txt'
